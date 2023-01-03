@@ -1,6 +1,6 @@
 <script>
-	import Leaderboard from '../../../components/Leaderboard.svelte';
-	import Thresholds from '../../../components/Thresholds.svelte';
+	import Leaderboard from '$lib/components/Leaderboard.svelte';
+	import Thresholds from '$lib/components/Thresholds.svelte';
 
 	export let data;
 

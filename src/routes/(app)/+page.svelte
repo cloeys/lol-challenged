@@ -1,8 +1,8 @@
 <script>
-    import ChallengeList from "../components/ChallengeList.svelte";
-    import SearchChallenge from "../components/SearchChallenge.svelte";
+    import ChallengeList from "$lib/components/ChallengeList.svelte";
+    import SearchChallenge from "$lib/components/SearchChallenge.svelte";
     import { fly } from "svelte/transition"; 
-	import SearchPlayer from "../components/SearchPlayer.svelte";
+	import SearchPlayer from "$lib/components/SearchPlayer.svelte";
 
     export let data;
     let filter = '';

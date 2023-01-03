@@ -1,5 +1,6 @@
 <nav>
     <a href="/">Challenged</a>
+    <a href="/login">Login</a>
 </nav>
 
 <style>
