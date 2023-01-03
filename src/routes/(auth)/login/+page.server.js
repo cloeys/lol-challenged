@@ -1,8 +1,32 @@
 import { AuthApiError } from "@supabase/supabase-js";
 import { fail, redirect } from "@sveltejs/kit";
 
+const OAUTH_PROVIDERS = ["google", "discord", "facebook"]
+
 export const actions = {
-    login: async({ request, locals }) => {
+    login: async({ request, locals, url }) => {
+        const provider = url.searchParams.get("provider");
+
+        if (provider) {
+            if (!OAUTH_PROVIDERS.includes(provider)) {
+                return fail(400, {
+                    message: "Provider not supported"
+                })
+            }
+            const { data, error: err } = await locals.sb.auth.signInWithOAuth({
+                provider
+            })
+
+            if (err) {
+                console.log(err)
+                return fail(400, {
+                    message: "Something went wrong"
+                })
+            }
+
+            throw redirect(303, data.url)
+        }
+
         const body = Object.fromEntries(await request.formData())
 
         const { error: err } = await locals.sb.auth.signInWithPassword({

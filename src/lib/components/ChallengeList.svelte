@@ -4,24 +4,11 @@
     export let challenges;
 </script>
 
-<h3>Challenges</h3>
-<div class="challenges">
+<h3 class="text-3xl font-bold py-4">Challenges</h3>
+<div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-8 gap-y-12">
     {#each challenges as challenge (challenge.id)}
         <ChallengeItem {challenge} />
     {:else}
-        <p>No results!</p>
+        <p class="font-bold">No results!</p>
     {/each}
 </div>
-
-<style>
-    .challenges {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        grid-column-gap: 1rem;
-        grid-row-gap: 2rem;
-    }
-
-    h3 {
-        padding: 1rem 0rem;
-    }
-</style>

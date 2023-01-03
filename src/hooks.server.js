@@ -8,8 +8,6 @@ export const handle = async ({ event, resolve }) => {
 	event.locals.sb = supabaseClient;
 	event.locals.session = session;
 
-	console.log(session);
-
 	if (event.url.pathname.includes('login') || event.url.pathname.includes('/register')) {
 		if (event.locals.session) {
 			throw redirect(303, '/');
