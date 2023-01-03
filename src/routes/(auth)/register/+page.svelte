@@ -1,7 +1,5 @@
-
-
-<h1>Login</h1>
-<form action="?/login" method="POST">
+<h1>Registration</h1>
+<form action="?/register" method="POST">
     <label>
         E-mail
         <input name="email" />
@@ -10,6 +8,5 @@
         Password
         <input type="password" name="password" />
     </label>
-    <button type="submit">Login</button>
+    <button type="submit">Register</button>
 </form>
-<p><a href="/register">No account yet? Register here</a></p>

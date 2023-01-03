@@ -2,7 +2,6 @@
 	import { onMount } from 'svelte';
 	import Nav from '$lib/components/Nav.svelte';
 	import { supabaseClient } from "$lib/supabase"
-	import '../../global.css';
 	import { invalidateAll } from '$app/navigation';
 
 	onMount(() => {

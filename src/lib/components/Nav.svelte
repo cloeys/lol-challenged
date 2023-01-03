@@ -1,6 +1,21 @@
+<script>
+	import { enhance } from "$app/forms";
+    import { supababaseClient } from "$lib/supabase"
+
+    const submitLogout = async ({ cancel }) => {
+        const { error } = await supababaseClient.auth.signOut();
+        if (error) {
+            console.log(error)
+        }
+        cancel();
+    }
+</script>
+
 <nav>
     <a href="/">Challenged</a>
-    <a href="/login">Login</a>
+    <form action="/logout" method="POST" use:enhance={submitLogout}>
+        <button type="submit">Logout</button>
+    </form>
 </nav>
 
 <style>
