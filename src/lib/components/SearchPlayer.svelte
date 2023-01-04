@@ -1,5 +1,4 @@
 <script>
-	import { fly } from 'svelte/transition';
 	import { goto } from '$app/navigation';
 
 	let playerName = '';

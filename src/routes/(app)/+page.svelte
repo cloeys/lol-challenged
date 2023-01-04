@@ -1,13 +1,12 @@
 <script>
 	import ChallengeList from '$lib/components/ChallengeList.svelte';
 	import SearchChallenge from '$lib/components/SearchChallenge.svelte';
-	import { fly } from 'svelte/transition';
 	import SearchPlayer from '$lib/components/SearchPlayer.svelte';
 
 	export let data;
 	let filter = '';
 
-	$: challenges = data.challenges;
+	let { challenges } = data;
 	$: filteredChallenges =
 		filter && filter.trim() !== ''
 			? challenges.filter((c) =>
@@ -20,8 +19,8 @@
 	};
 </script>
 
-<section class="mx-20">
-	<div class="flex justify-between">
+<section>
+	<div class="flex justify-between flex-wrap">
 		<SearchChallenge on:search={filterChallenges} />
 		<SearchPlayer />
 	</div>
