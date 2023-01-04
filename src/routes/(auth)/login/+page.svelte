@@ -45,15 +45,15 @@
 <p><a href="/register">No account yet? Register <span class="font-bold">here</span>!</a></p>
 <p>Or use one of the supported social providers:</p>
 <form method="POST" use:enhance={submitSocialLogin}>
-    <button formaction="?/login&provider=discord" class="btn gap-2 bg-[#5865F2]">
+    <button formaction="?/login&provider=discord" class="btn gap-2 bg-[#5865F2] text-white">
         <Fa icon={faDiscord} />
         Discord
     </button>
-    <button formaction="?/login&provider=facebook" class="btn gap-2 bg-[#4267B2]">
+    <button formaction="?/login&provider=facebook" class="btn gap-2 bg-[#4267B2] text-white">
         <Fa icon={faFacebook} />
         Facebook
     </button>
-    <button formaction="?/login&provider=google" class="btn gap-2 bg-[#DB4437]">
+    <button formaction="?/login&provider=google" class="btn gap-2 bg-[#DB4437] text-white">
         <Fa icon={faGoogle} />
         Google
     </button>
